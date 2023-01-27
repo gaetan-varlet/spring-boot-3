@@ -55,6 +55,10 @@ Migration un peu plus _difficile_ qu'une montée de version mineure
 - passer à la version 2.7 (fortement conseillé)
 - être au moins en Java 17
 
+Spécifique Insee :
+
+- passage à puppet 6 (pas de Java 17 sur puppet 3)
+
 ---
 
 ## Les principales montées de version de bibliothèques
@@ -68,13 +72,44 @@ Migration un peu plus _difficile_ qu'une montée de version mineure
 
 ---
 
-## Retour d'expérience
+## Retour d'expérience (1)
 
 - montée de version de Spring Security
   - en Spring Boot 2.7, passage en Spring Security 5.8
   - en Spring Boot 3.0, passage en Spring Security 6.0
-- renommage des properties
-  - utilisation de `spring-boot-properties-migrator`
-- changement de le mappinf d'URL. Exemple : **@GetMapping("/some/greeting")**
+  - **TODO** : lien de la classe de sécurité
+- changement dans le mapping d'URL. Exemple : **@GetMapping("/some/greeting")**
   - avant : **GET /some/greeting** et **GET /some/greeting/** OK
   - maintenant : **GET /some/greeting/** erreur 404
+- renommage des properties (pas eu besoin pour moi)
+  - utilisation de `spring-boot-properties-migrator`
+
+---
+
+## Retour d'expérience (2)
+
+- changement de la dépendance de Springdoc (Swagger)
+
+avant :
+
+```xml
+<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springdoc-openapi.version}</version>
+</dependency>
+```
+
+après :
+
+```xml
+<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc-openapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+```
