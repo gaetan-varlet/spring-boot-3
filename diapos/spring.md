@@ -79,10 +79,11 @@ Spécifique Insee :
   - en Spring Boot 3.0, passage en Spring Security 6.0
   - **TODO** : lien de la classe de sécurité
 - changement dans le mapping d'URL. Exemple : **@GetMapping("/some/greeting")**
-  - avant : **GET /some/greeting** et **GET /some/greeting/** OK
-  - maintenant : **GET /some/greeting/** erreur 404
-- renommage des properties (pas eu besoin pour moi)
+  - **GET /some/greeting** => OK
+  - **GET /some/greeting/** => erreur 404
+- renommage des properties
   - utilisation de `spring-boot-properties-migrator`
+  - changement au runtime / signalement dans la log
 
 ---
 
@@ -94,9 +95,9 @@ avant :
 
 ```xml
 <dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>${springdoc-openapi.version}</version>
+	<groupId>org.springdoc</groupId>
+	<artifactId>springdoc-openapi-ui</artifactId>
+	<version>${springdoc-openapi.version}</version><!-- 1.6.14 -->
 </dependency>
 ```
 
@@ -104,12 +105,12 @@ après :
 
 ```xml
 <dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>${springdoc-openapi.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
+	<groupId>org.springdoc</groupId>
+	<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+	<version>${springdoc-openapi.version}</version><!-- 2.0.2 -->
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
 ```
