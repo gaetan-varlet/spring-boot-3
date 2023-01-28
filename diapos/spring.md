@@ -77,7 +77,7 @@ Spécifique Insee :
 - montée de version de Spring Security
   - en Spring Boot 2.7, passage en Spring Security 5.8
   - en Spring Boot 3.0, passage en Spring Security 6.0
-  - **TODO** : lien de la classe de sécurité
+  - lien de la classe de sécurité : [exemple](https://github.com/gaetan-varlet/formation-api-rest/blob/master/applications/application-serveur-2-springboot/src/main/java/fr/insee/formationapirest/config/SecurityConfigurationKeycloakImpl.java)
 - changement dans le mapping d'URL
   - **GET /some/greeting** => OK
   - **GET /some/greeting/** => erreur 404
