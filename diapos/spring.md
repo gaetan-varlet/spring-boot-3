@@ -78,7 +78,7 @@ Spécifique Insee :
   - en Spring Boot 2.7, passage en Spring Security 5.8
   - en Spring Boot 3.0, passage en Spring Security 6.0
   - **TODO** : lien de la classe de sécurité
-- changement dans le mapping d'URL. Exemple : **@GetMapping("/some/greeting")**
+- changement dans le mapping d'URL
   - **GET /some/greeting** => OK
   - **GET /some/greeting/** => erreur 404
 - renommage des properties
