@@ -16,6 +16,7 @@ C'est un framework libre pour concevoir des applications Java. Spring s'occupe d
 
 - **Spring Core** : coeur de Spring qui gère la création et le cycle de vie des objets avec les annotations `@Autowired`, `@Controller`, `@Service`, `@Repository`, etc...
 - **Spring MVC** : permet de construire des applications web basé sur l'API Servlet
+- **Spring WebFlux** : permet de construire des applications web réactives
 - **Spring Data** : permet de gérer le mapping objet-relationnel (ORM)
 - **Spring Batch** : permet de gérer les traitements par lots
 - **Spring Security** : fournit des fonctionnalités d'authentification, d'autorisation et de sécurité
@@ -68,6 +69,7 @@ Spécifique Insee :
 - Tomcat 9 => Tomcat 10
   - passage de Java EE à Jakarta EE
   - imports `javax.*` deviennent `jakarta.*`
+- Spring Batch 4 => [Spring Batch 5](https://docs.spring.io/spring-batch/docs/current/reference/html/whatsnew.html#whatsNew)
 - support natif de GraalVM
 
 ---
